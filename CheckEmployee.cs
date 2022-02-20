@@ -8,21 +8,29 @@ namespace EmployeeWageProgram
 {
     public class CheckEmployee
     {
-        public static void CheckEmployeePresentOrNot()
+        public static void CalculateDailyWage()
         {
             Random random = new Random();
             int AttendanceVariable = random.Next(2);
             int IsPresent = 1;
-
+            int WagePerHour = 20;
+            int FullDayHour = 8;
+            int WorkingHour;
+            int DailyWage;
             if (AttendanceVariable == IsPresent)
 
             {
+                WorkingHour = 8;
                 Console.WriteLine("Employee is Present");
             }
             else
             {
+                WorkingHour = 0;
                 Console.WriteLine("Employee is Absent");
             }
+            
+            DailyWage = WagePerHour*WorkingHour;
+            Console.WriteLine("Daily wage of employee is " + DailyWage);
         }
 
     }
